@@ -9,7 +9,7 @@ export default function HeroSection() {
     <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between overflow-hidden bg-mint-pale">
       
       {/* 1. Full-Screen Background Video */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
         <video
           autoPlay
           loop
@@ -17,11 +17,14 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           poster="/jammu-hero-golden-hour.png"
-          className="w-full h-full object-cover object-right lg:object-center"
+          className="w-full h-full object-cover object-center"
         >
           <source src="/jammu-hero-video.mp4" type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
+
+        {/* Ambient Gradient Overlay for text contrast across all device viewports */}
+        <div className="absolute inset-0 bg-gradient-to-r from-mint-pale/95 via-mint-pale/70 to-mint-pale/25 sm:from-mint-pale/90 sm:via-mint-pale/50 sm:to-transparent z-10" />
       </div>
 
       {/* 2. Main Hero Content Container */}
